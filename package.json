@@ -1,0 +1,21 @@
+{
+  "name": "quickstart-hugo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "hugo server",
+    "startwithdrafts": "hugo server -D",
+    "build": "hugo",
+    "build:css": "tailwindcss build assets/css/main.css -o static/css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13"
+  }
+}

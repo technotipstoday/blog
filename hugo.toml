@@ -1,0 +1,35 @@
+baseurl = "https://blog.technotipstoday.dev"
+title = "Code and More Hacks"
+author = "Sirajudheen Mohamed Ali"
+canonifyurls = true
+languagecode = "en"
+theme = "black-and-light"
+
+pygmentsstyle       = "bw"
+pygmentscodefences  = true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  sitename = "Code and More"
+  disableWebFonts = false
+  mainCSS = "main.css"
+
+[[menu.main]]
+    name = "About"
+    url  = "/post/about"
+[[menu.main]]
+    name = "Projects"
+    url  = "/post/projects"
+[[menu.main]]
+    name = "Resume"
+    url  = "/post/resume"
+
+[build]
+  writeStats = true
+[outputFormats]
+  [outputFormats.CSS]
+    mediaType = "text/css"
+    baseName = "styles"
+    isPlainText = true
+  
