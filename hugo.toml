@@ -4,11 +4,12 @@ author = "Sirajudheen Mohamed Ali"
 canonifyurls = true
 languagecode = "en"
 theme = "black-and-light"
+# theme = "ananke"
 
 pygmentsstyle       = "bw"
 pygmentscodefences  = true
 
-disableKinds = ["taxonomy", "taxonomyTerm"]
+disableKinds = ["taxonomy"]
 
 [params]
   sitename = "Code and More"
@@ -17,13 +18,13 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [[menu.main]]
     name = "About"
-    url  = "/post/about"
+    url  = "/about"
 [[menu.main]]
     name = "Projects"
-    url  = "/post/projects"
+    url  = "/projects"
 [[menu.main]]
     name = "Resume"
-    url  = "/post/resume"
+    url  = "/resume"
 
 [build]
   writeStats = true

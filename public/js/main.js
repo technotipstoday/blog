@@ -1,0 +1,1 @@
+console.log('Hello, Hugo! - Run from static/js/main.js');

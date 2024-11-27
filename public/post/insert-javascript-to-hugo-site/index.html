@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="">
+
+    
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400|Old+Standard+TT:400&display=swap" rel="stylesheet" media="print" type="text/css" onload="this.media='all'">
+    
+
+    <title>
+      
+      
+         JavaScript in Hugo 
+      
+    </title>
+    <link rel="canonical" href="http://localhost:1313/post/insert-javascript-to-hugo-site/">
+
+    <style>
+  * {
+    border:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    margin:0;
+    padding:0;
+    color: black;
+    text-decoration-skip: ink;
+  }
+
+  body {
+    font-family:'Open Sans', 'Myriad Pro', Myriad, sans-serif;
+    font-size:17px;
+    line-height:160%;
+    color:#1d1313;
+    max-width:700px;
+    margin:auto;
+  }
+
+  p {
+    margin: 20px 0;
+  }
+
+  a img {
+    border:none;
+  }
+
+  img {
+    margin: 10px auto 10px auto;
+    max-width: 100%;
+    display: block;
+  }
+
+  .left-justify { float: left; }
+  .right-justify { float:right; }
+
+  pre, code {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    background-color: #f7f7f7;
+  }
+
+  code {
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    margin-bottom: 16px;
+    word-wrap: normal;
+    padding: 16px;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+  }
+
+  pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: transparent;
+    border: 0;
+  }
+
+  pre code {
+    display: inline;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    background-color: transparent;
+    border: 0;
+  }
+
+  pre code::before,
+  pre code::after {
+    content: normal;
+  }
+
+  em,q,em,dfn {
+    font-style:italic;
+  }
+
+  .sans,html .gist .gist-file .gist-meta {
+    font-family:"Open Sans","Myriad Pro",Myriad,sans-serif;
+  }
+
+  .mono,pre,code,tt,p code,li code {
+    font-family:Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+  }
+
+  .heading,.serif,h1,h2,h3 {
+    font-family:"Old Standard TT",serif;
+  }
+
+  strong {
+    font-weight:600;
+  }
+
+  q:before {
+    content:"\201C";
+  }
+
+  q:after {
+    content:"\201D";
+  }
+
+  del,s {
+    text-decoration:line-through;
+  }
+
+  blockquote {
+    font-family:"Old Standard TT",serif;
+    text-align:center;
+    padding:50px;
+  }
+
+  blockquote p {
+    display:inline-block;
+    font-style:italic;
+  }
+
+  blockquote:before,blockquote:after {
+    font-family:"Old Standard TT",serif;
+    content:'\201C';
+    font-size:35px;
+    color:#403c3b;
+  }
+
+  blockquote:after {
+    content:'\201D';
+  }
+
+  hr {
+    width:40%;
+    height: 1px;
+    background:#403c3b;
+    margin: 25px auto;
+  }
+
+  h1 {
+    font-size:35px;
+  }
+
+  h2 {
+    font-size:28px;
+  }
+
+  h3 {
+    font-size:22px;
+    margin-top:18px;
+  }
+
+  h1 a,h2 a,h3 a {
+    text-decoration:none;
+  }
+
+  h1,h2 {
+    margin-top:28px;
+  }
+
+  #sub-header, .date {
+    color:#403c3b;
+    font-size:13px;
+  }
+
+  #sub-header {
+    margin: 0 4px;
+  }
+
+  #nav h1 a {
+    font-size:35px;
+    color:#1d1313;
+    line-height:120%;
+  }
+
+  .posts_listing a,#nav a {
+    text-decoration: none;
+  }
+
+  li {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-left: 5px;
+  }
+
+  ul li {
+    list-style-type: none;
+  }
+  ul li:before {
+    content:"\00BB \0020";
+  }
+
+  #nav ul li:before, .posts_listing li:before {
+    content:'';
+    margin-right:0;
+  }
+
+  #content {
+    text-align:left;
+    width:100%;
+    font-size:15px;
+    padding:60px 0 80px;
+  }
+
+  #content h1,#content h2 {
+    margin-bottom:5px;
+  }
+
+  #content h2 {
+    font-size:25px;
+  }
+
+  #content .entry-content {
+    margin-top:15px;
+  }
+
+  #content .date {
+    margin-left:3px;
+  }
+
+  #content h1 {
+    font-size:30px;
+  }
+
+  .highlight {
+    margin: 10px 0;
+  }
+
+  .posts_listing {
+    margin:0 0 50px;
+  }
+
+  .posts_listing li {
+    margin:0 0 25px 15px;
+  }
+
+  .posts_listing li a:hover,#nav a:hover {
+    text-decoration: underline;
+  }
+
+  #nav {
+    text-align:center;
+    position:static;
+    margin-top:60px;
+  }
+
+  #nav ul {
+    display: table;
+    margin: 8px auto 0 auto;
+  }
+
+  #nav li {
+    list-style-type:none;
+    display:table-cell;
+    font-size:15px;
+    padding: 0 20px;
+  }
+
+  #links {
+    display: flex;
+    justify-content: space-between;
+    margin: 50px 0 0 0;
+  }
+
+  #links :nth-child(1) {
+    margin-right:0.5em;;
+  }
+
+  #links :nth-child(2) {
+    margin-left:0.5em;;
+  }
+
+  #not-found {
+    text-align: center;
+  }
+
+  #not-found a {
+    font-family:"Old Standard TT",serif;
+    font-size: 200px;
+    text-decoration: none;
+    display: inline-block;
+    padding-top: 225px;
+  }
+
+  @media (max-width: 750px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:28px;
+    }
+
+    #nav li {
+      font-size:13px;
+      padding: 0 15px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:50px;
+      font-size:14px;
+    }
+
+    #content h1 {
+      font-size:25px;
+    }
+
+    #content h2 {
+      font-size:22px;
+    }
+
+    .posts_listing li div {
+      font-size:12px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    body {
+      padding-left:20px;
+      padding-right:20px;
+    }
+
+    #nav h1 a {
+      font-size:22px;
+    }
+
+    #nav li {
+      font-size:12px;
+      padding: 0 10px;
+    }
+
+    #content {
+      margin-top:0;
+      padding-top:20px;
+      font-size:12px;
+    }
+
+    #content h1 {
+      font-size:20px;
+    }
+
+    #content h2 {
+      font-size:18px;
+    }
+
+    .posts_listing li div{
+      font-size:12px;
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    *, #nav h1 a {
+      color: #FDFDFD;
+    }
+
+    body {
+      background: #121212;
+    }
+
+    pre, code {
+      background-color: #262626;
+    }
+
+    #sub-header, .date {
+      color: #BABABA;
+    }
+
+    hr {
+      background: #EBEBEB;
+    }
+  }
+</style>
+
+
+    </head>
+
+  <body>
+    <section id=nav>
+      <h1><a class="h-card" href="http://localhost:1313/">Code and More</a></h1>
+      <ul>
+        
+          <li><a href="http://localhost:1313/about">About</a></li>
+        
+          <li><a href="http://localhost:1313/projects">Projects</a></li>
+        
+          <li><a href="http://localhost:1313/resume">Resume</a></li>
+        
+      </ul>
+    </section>
+
+
+<section id=content>
+  <h1> JavaScript in Hugo </h1>
+
+  
+  <div id=sub-header>
+    October 2024 · 3 minute read
+  </div>
+  
+
+  <div class="entry-content">
+    <p>Running JavaScript inside a Hugo site is quite straightforward since Hugo generates static HTML files that you can enhance with client-side JavaScript. You can include JavaScript for a variety of purposes, such as adding dynamic features, handling forms, or integrating third-party services.</p>
+<p>Here are the steps to add and run JavaScript in your Hugo site:</p>
+<h3 id="1-add-javascript-files-to-your-hugo-site">1. <strong>Add JavaScript Files to Your Hugo Site</strong></h3>
+<pre><code>- Place your JavaScript files inside the `static/js/` folder of your Hugo site. Files in the `static` directory are served as-is, meaning they will be available in the root of your site when deployed.
+- For example:
+    - Create the folder `static/js/` in your Hugo project.
+    - Add your custom JavaScript file, e.g., `main.js`, to this folder: `static/js/main.js`.
+</code></pre>
+<h3 id="2-include-javascript-in-your-layout">2. <strong>Include JavaScript in Your Layout</strong></h3>
+<p>You need to link the JavaScript file in your HTML templates, typically in the <code>&lt;head&gt;</code> or before the closing <code>&lt;/body&gt;</code> tag of your site&rsquo;s layout files.</p>
+<p>For example, in your <code>layouts/_default/baseof.html</code> (or whichever layout file you use), add the following line before the closing <code>&lt;/body&gt;</code> tag:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="font-weight:bold">script</span> src=<span style="font-style:italic">&#34;/js/main.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><ul>
+<li>This includes the <code>main.js</code> file located in <code>static/js/</code> into your HTML.</li>
+<li>If you have a theme, place this in the appropriate layout file in the theme&rsquo;s <code>layouts/</code> directory (usually in the base template, e.g., <code>baseof.html</code>).</li>
+</ul>
+<h3 id="3-inline-javascript-optional">3. <strong>Inline JavaScript (Optional)</strong></h3>
+<p>You can also write inline JavaScript directly in your template files if you have small scripts that don&rsquo;t need to be placed in a separate file. You can do this within a <code>&lt;script&gt;</code> tag.</p>
+<p>For example, inside your <code>layouts/_default/single.html</code> or other templates:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>  console.log(<span style="font-style:italic">&#39;Hello, Hugo! - Inline JavaScript&#39;</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><h3 id="4-using-hugos-asset-bundling-optional">4. <strong>Using Hugo&rsquo;s Asset Bundling (Optional)</strong></h3>
+<pre><code>If you want to bundle, minify, or concatenate your JavaScript files, Hugo has built-in asset pipeline features.
+
+You can create a file like `assets/js/main.js` and process it using Hugo's asset processing features. For example, in your template:
+
+```go
+{{ $js := resources.Get &quot;js/main.js&quot; | minify | fingerprint }}
+&lt;script src=&quot;{{ $js.Permalink }}&quot; integrity=&quot;{{ $js.Data.Integrity }}&quot;&gt;&lt;/script&gt;
+```
+- This uses Hugo's asset pipeline to process, minify, and add a fingerprint for caching purposes.
+</code></pre>
+<h3 id="5-running-javascript-in-your-hugo-site">5. <strong>Running JavaScript in Your Hugo Site</strong></h3>
+<p>Once your JavaScript file is linked, you can add whatever functionality you need. For example, if you add the following <code>main.js</code> to your <code>static/js/main.js</code> file:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="font-style:italic">// main.js
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>document.addEventListener(<span style="font-style:italic">&#39;DOMContentLoaded&#39;</span>, <span style="font-weight:bold">function</span>() {
+</span></span><span style="display:flex;"><span>    console.log(<span style="font-style:italic">&#34;Hugo site is ready!&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// Add more JS functionality here
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>});
+</span></span></code></pre></div><p>This script will run when the DOM is fully loaded, and you&rsquo;ll see the output in the browser&rsquo;s developer console.</p>
+<h3 id="6-using-external-libraries">6. <strong>Using External Libraries</strong></h3>
+<p>If you want to use external JavaScript libraries (e.g., jQuery, Bootstrap), you can include them either by:
+- Linking to a CDN:
+<code>html &lt;script src=&quot;https://code.jquery.com/jquery-3.6.0.min.js&quot;&gt;&lt;/script&gt; </code>
+- Downloading the libraries and placing them in the <code>static</code> folder, just like your custom JS files.</p>
+<h3 id="example-setup">Example Setup</h3>
+<p><strong>Project Structure:</strong></p>
+<pre tabindex="0"><code>my-hugo-site/
+├── assets/
+├── content/
+├── layouts/
+│   └── _default/
+│       └── baseof.html
+├── static/
+│   └── js/
+│       └── main.js
+└── config.toml
+</code></pre><p><strong>baseof.html:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="">&lt;!DOCTYPE html&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="font-weight:bold">html</span> lang=<span style="font-style:italic">&#34;en&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="font-weight:bold">head</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="font-weight:bold">meta</span> charset=<span style="font-style:italic">&#34;UTF-8&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="font-weight:bold">meta</span> name=<span style="font-style:italic">&#34;viewport&#34;</span> content=<span style="font-style:italic">&#34;width=device-width, initial-scale=1.0&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="font-weight:bold">title</span>&gt;{{ .Title }}&lt;/<span style="font-weight:bold">title</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="font-weight:bold">head</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="font-weight:bold">body</span>&gt;
+</span></span><span style="display:flex;"><span>    {{ block &#34;main&#34; . }}{{ end }}
+</span></span><span style="display:flex;"><span>    &lt;<span style="font-weight:bold">script</span> src=<span style="font-style:italic">&#34;/js/main.js&#34;</span>&gt;&lt;/<span style="font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="font-weight:bold">body</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="font-weight:bold">html</span>&gt;
+</span></span></code></pre></div><p><strong>main.js (in static/js/):</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>document.addEventListener(<span style="font-style:italic">&#39;DOMContentLoaded&#39;</span>, <span style="font-weight:bold">function</span>() {
+</span></span><span style="display:flex;"><span>    alert(<span style="font-style:italic">&#39;Hello from Hugo!&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="7-using-javascript-with-shortcodes-optional">7. <strong>Using JavaScript with Shortcodes (Optional)</strong></h3>
+<p>Hugo supports shortcodes, and you can use shortcodes to embed JavaScript into specific content. For example, you could create a shortcode in <code>layouts/shortcodes/my-js.html</code> that injects JavaScript into a post:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="font-weight:bold">script</span>&gt;
+</span></span><span style="display:flex;"><span>  console.log(<span style="font-style:italic">&#39;This JavaScript is inserted via a shortcode&#39;</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="font-weight:bold">script</span>&gt;
+</span></span></code></pre></div><p>Then use the shortcode in your content file:</p>
+<pre><code>```markdown
+<script>
+        console.log('This JavaScript is injected via the my-js shortcode');
+    </script>
+```
+</code></pre>
+<h3 id="conclusion">Conclusion</h3>
+<p>To run JavaScript in your Hugo site:</p>
+<ol>
+<li>Place the JavaScript files in the <code>static/</code> folder.</li>
+<li>Include them in your layout files using <code>&lt;script&gt;</code> tags.</li>
+<li>Optionally use Hugo’s asset pipeline to manage, minify, and fingerprint your JavaScript.</li>
+</ol>
+<p>This setup should allow you to easily add dynamic client-side functionality to your Hugo-generated static site.</p>
+
+  </div>
+
+  <div id=links>
+    
+    
+  </div>
+</section>
+
+<script>
+  console.log('Hello, Hugo! - Inline JavaScript');
+</script>
+
+
+<script src="http://localhost:1313/js/main.js"></script>
+
+<footer class="footer">
+    <h5>I am footer</h5>
+</footer>
+
+</body>
+
+</html>

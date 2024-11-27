@@ -10,52 +10,24 @@
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>http://localhost:1313/post/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>Hi, I&amp;rsquo;m Sirajudheen I&amp;rsquo;m a passionate Software Engineer with over 19 years of experience specializing in JavaScript, Ruby, and Next.js. I love working on projects that merge modern technologies with innovative solutions, particularly in frontend and backend web development.&#xA;Currently, I’m focused on helping businesses transition to digital solutions, providing consulting services, and working with remote teams to build highly scalable applications.&#xA;My Areas of Expertise: Frontend Development: Next.js, React.js, Astro Backend Development: Node.</description>
     </item>
     <item>
-      <title>Resume</title>
-      <link>http://localhost:1313/post/resume/</link>
+      <title>JavaScript in Hugo</title>
+      <link>http://localhost:1313/post/insert-javascript-to-hugo-site/</link>
       <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/resume/</guid>
+      <guid>http://localhost:1313/post/insert-javascript-to-hugo-site/</guid>
+      <description>Running JavaScript inside a Hugo site is quite straightforward since Hugo generates static HTML files that you can enhance with client-side JavaScript. You can include JavaScript for a variety of purposes, such as adding dynamic features, handling forms, or integrating third-party services.&#xA;Here are the steps to add and run JavaScript in your Hugo site:&#xA;1. Add JavaScript Files to Your Hugo Site - Place your JavaScript files inside the `static/js/` folder of your Hugo site.</description>
+    </item>
+    <item>
+      <title>Resume</title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Tue, 08 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
       <description>Sirajudheen - Resume Professional Experience Software Engineer &amp;amp; Consultant | Freelance January 2005 – Present&#xA;Offering web development services, focusing on Next.js and Node.js applications. Building highly scalable APIs using GoLang, Ruby on Rails, and Node.js. Working with PostgreSQL and MySQL for database design and optimization. Implementing OpenAI API for AI-driven applications. Founder | FitFusion.fashion August 2024 – Present&#xA;Developed and launched a Shopify store focusing on fitness fashion. Leveraged Facebook Ads and SEO to grow the business.</description>
-    </item>
-    <item>
-      <title>Black &amp; Light Demo</title>
-      <link>http://localhost:1313/post/hugo-block-and-light-theme/</link>
-      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/hugo-block-and-light-theme/</guid>
-      <description>Black and Light is a high contrast, performant and Javascript-free theme.&#xA;Features Loads in a single request (with web-fonts disabled) 100 / 100 on Google Page Speed test (100 / 100 on mobile with web-fonts disabled) Scriptless (unless you enable Google Analyitcs) Styles inlined in head High Contrast Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text&#xA;This is bold text</description>
-    </item>
-    <item>
-      <title>Creating a New Theme</title>
-      <link>http://localhost:1313/post/creating-a-new-theme/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/creating-a-new-theme/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.&#xA;We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
-    </item>
-    <item>
-      <title>(Hu)go Template Primer</title>
-      <link>http://localhost:1313/post/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/goisforlovers/</guid>
-      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.&#xA;This document is a brief primer on using go templates.</description>
-    </item>
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>http://localhost:1313/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.&#xA;Save it somewhere specific as we will be using it in the next step.&#xA;More complete instructions are available at installing hugo&#xA;Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.&#xA;Follow the following steps:&#xA;Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313 Corresponding pseudo commands:</description>
-    </item>
-    <item>
-      <title>Migrate to Hugo from Jekyll</title>
-      <link>http://localhost:1313/post/migrate-from-jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/migrate-from-jekyll/</guid>
-      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like&#xA;▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png should become&#xA;▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
     </item>
   </channel>
 </rss>

@@ -10,6 +10,7 @@ I'm a passionate **Software Engineer** with over 19 years of experience speciali
 Currently, I’m focused on helping businesses transition to digital solutions, providing **consulting services**, and working with **remote teams** to build highly scalable applications.
 
 ### My Areas of Expertise:
+
 - Frontend Development: Next.js, React.js, Astro
 - Backend Development: Node.js, GoLang, Ruby on Rails
 - Database: PostgreSQL, MySQL
@@ -27,11 +28,13 @@ I have been actively contributing to the tech community, helping startups, and b
 
 ### Contact Me
 
-You can connect with me on [LinkedIn](https://www.linkedin.com/in/sirajudheen) or check out my [GitHub](https://github.com/sirajudheen).
+You can connect with me on [LinkedIn](https://www.linkedin.com/in/sirajudheen) or check out my [GitHub](https://github.com/sirajudheenam).
 
 ---
 
 ### Find My Work
-- [FitFusion](https://fitfusion.fashion) - An online Shopify dropshipping store.
-- [Travelwise24](https://travelwise24.app) - A blog focused on travel tips, deals, and visa services.
-- [Shopwise24](https://shopwise24.app) - An Amazon affiliate shopping website with curated lists of the best products and hacks.
+
+- [FitFusion24](https://fitfusion24.app) - An online store specializing in Sports Goods at an affordable price.
+- [TravelWise24](https://travelwise24.app) - A blog focused on travel tips, deals, and visa services.
+- [ShopWise24](https://shopwise24.app) - A blog with curated lists of the best products and hacks.
+- [FitFusion](https://fitfusion.fashion) - An online store with variety of sport articles.
